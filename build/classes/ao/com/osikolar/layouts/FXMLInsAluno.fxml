@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="636.0" prefWidth="820.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ao.com.osikolar.layouts.FXMLInsAlunoController">
+   <bottom>
+      <HBox prefHeight="75.0" prefWidth="200.0" spacing="82.0" style="-fx-background-color: #D0CFCE;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnSalvar" mnemonicParsing="false" onAction="#accionarRegInscricao" prefHeight="35.0" prefWidth="90.0" style="-fx-background-color: #336666;" text="Salvar" textFill="WHITE">
+               <font>
+                  <Font name="Consolas Bold" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnActualizar" mnemonicParsing="false" onAction="#accionarActualizar" prefHeight="35.0" prefWidth="90.0" style="-fx-background-color: #336666;" text="Actualizar" textFill="WHITE">
+               <font>
+                  <Font name="Consolas Bold" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnDeletar" mnemonicParsing="false" onAction="#accionarDeletar" prefHeight="35.0" prefWidth="90.0" style="-fx-background-color: #336666;" text="Deletar" textFill="WHITE">
+               <font>
+                  <Font name="Consolas Bold" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnLimpar" mnemonicParsing="false" onAction="#limpar" prefHeight="35.0" prefWidth="90.0" style="-fx-background-color: #336666;" text="Limpar" textFill="WHITE">
+               <font>
+                  <Font name="Consolas Bold" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnProcurar" mnemonicParsing="false" prefHeight="35.0" prefWidth="90.0" style="-fx-background-color: #336666;" text="Procurar" textFill="WHITE">
+               <font>
+                  <Font name="Consolas Bold" size="13.0" />
+               </font>
+            </Button>
+         </children>
+         <padding>
+            <Insets left="21.0" top="18.0" />
+         </padding>
+      </HBox>
+   </bottom>
+   <center>
+      <SplitPane orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" BorderPane.alignment="CENTER">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <SplitPane dividerPositions="0.32321428571428573" layoutY="-3.0" orientation="VERTICAL" prefHeight="562.0" prefWidth="820.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="184.0" prefWidth="818.0">
+                           <children>
+                              <AnchorPane layoutX="-1.0" layoutY="-1.0" prefHeight="181.0" prefWidth="820.0">
+                                 <children>
+                                    <TableView fx:id="tbViewAluno" layoutY="1.0" prefHeight="181.0" prefWidth="820.0">
+                                      <columns>
+                                        <TableColumn fx:id="clcId" prefWidth="50.0" text="ID" />
+                                        <TableColumn fx:id="clcNome" prefWidth="170.0" text="NOME COMPLETO" />
+                                          <TableColumn fx:id="clcGenero" prefWidth="60.0" text="GÊNERO" />
+                                          <TableColumn fx:id="clcAniversario" prefWidth="85.0" text="ANIVERSÁRIO" />
+                                          <TableColumn fx:id="clcEstado" prefWidth="90.0" text="ESTADO" />
+                                          <TableColumn fx:id="clcAnoLectivo" text="ANO LEC." />
+                                          <TableColumn fx:id="clcMunicipio" prefWidth="90.0" text="MUNICIPIO" />
+                                          <TableColumn fx:id="clcProvincia" prefWidth="100.0" text="PROVINCIA" />
+                                          <TableColumn fx:id="clcCedulaBi" prefWidth="85.0" text="CED/BI" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="818.0">
+                           <children>
+                              <HBox layoutX="-2.0" layoutY="128.0" prefHeight="250.0" prefWidth="410.0">
+                                 <children>
+                                    <GridPane prefHeight="300.0" prefWidth="400.0" style="-fx-background-color: #336666;">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="198.0" minWidth="10.0" prefWidth="111.0" />
+                                        <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="309.0" minWidth="10.0" prefWidth="289.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label text="ID Insc.:" textFill="WHITE">
+                                             <padding>
+                                                <Insets left="8.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="Consolas Bold" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Data ins.:" textFill="WHITE" GridPane.rowIndex="1">
+                                             <padding>
+                                                <Insets left="8.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="Consolas Bold" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Modalidade:" textFill="WHITE" GridPane.rowIndex="2">
+                                             <padding>
+                                                <Insets left="8.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="Consolas Bold" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="ID Aluno:" textFill="WHITE" GridPane.rowIndex="4">
+                                             <padding>
+                                                <Insets left="8.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="Consolas Bold" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Classe:" textFill="WHITE" GridPane.rowIndex="5">
+                                             <padding>
+                                                <Insets left="8.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="Consolas Bold" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txtIdInscricao" editable="false" prefHeight="35.0" prefWidth="80.0" GridPane.columnIndex="1">
+                                             <font>
+                                                <Font name="Consolas" size="14.0" />
+                                             </font></TextField>
+                                          <HBox prefHeight="63.0" prefWidth="270.0" spacing="30.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                             <children>
+                                                <RadioButton fx:id="rbnConfirmacao" mnemonicParsing="false" text="Confirmação" textFill="WHITE">
+                                                   <toggleGroup>
+                                                      <ToggleGroup fx:id="tgpModalidade" />
+                                                   </toggleGroup>
+                                                   <font>
+                                                      <Font name="Consolas Bold" size="13.0" />
+                                                   </font>
+                                                </RadioButton>
+                                                <RadioButton fx:id="rbnMatricula" mnemonicParsing="false" text="Matrícula" textFill="WHITE" toggleGroup="$tgpModalidade">
+                                                   <font>
+                                                      <Font name="Consolas Bold" size="13.0" />
+                                                   </font>
+                                                </RadioButton>
+                                             </children>
+                                             <opaqueInsets>
+                                                <Insets />
+                                             </opaqueInsets>
+                                             <padding>
+                                                <Insets top="13.0" />
+                                             </padding>
+                                          </HBox>
+                                          <DatePicker fx:id="dpkDataInscricao" prefHeight="35.0" prefWidth="130.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <ComboBox fx:id="cboClasse" prefHeight="35.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                          <TextField fx:id="txtNumero" prefHeight="35.0" prefWidth="75.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                             <font>
+                                                <Font name="Consolas" size="14.0" />
+                                             </font>
+                                          </TextField>
+                                          <Label text="Número:" textFill="WHITE" GridPane.rowIndex="3">
+                                             <font>
+                                                <Font name="Consolas Bold" size="16.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets left="8.0" />
+                                             </padding>
+                                          </Label>
+                                          <ComboBox fx:id="cboAluno" prefHeight="35.0" prefWidth="282.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="5.0" top="5.0" />
+                                       </padding>
+                                    </GridPane>
+                                 </children>
+                              </HBox>
+                              <HBox layoutX="404.0" layoutY="76.0" prefHeight="300.0" prefWidth="413.0" />
+                              <GridPane layoutX="400.0" layoutY="128.0" prefHeight="250.0" prefWidth="420.0" style="-fx-background-color: #336666;">
+                                 <children>
+                                    <Label text="Turma:" textFill="WHITE" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="Consolas Bold" size="16.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="8.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label text="Sala:" textFill="WHITE" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="Consolas Bold" size="16.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="8.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label text="Turno:" textFill="WHITE" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font name="Consolas Bold" size="16.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="8.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label text="Usuário:" textFill="WHITE" GridPane.rowIndex="4">
+                                       <font>
+                                          <Font name="Consolas Bold" size="16.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="8.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label text="Observação:" textFill="WHITE" GridPane.rowIndex="5">
+                                       <font>
+                                          <Font name="Consolas Bold" size="16.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="8.0" />
+                                       </padding>
+                                    </Label>
+                                    <ComboBox fx:id="cboTurma" prefHeight="35.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <ComboBox fx:id="cboSala" prefHeight="35.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <ComboBox fx:id="cboTurno" prefHeight="35.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <ComboBox fx:id="cboUsuario" prefHeight="35.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                    <TextArea fx:id="txtObs" prefHeight="37.0" prefWidth="302.0" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                       <font>
+                                          <Font name="Consolas" size="12.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets right="4.0" top="2.5" />
+                                       </GridPane.margin></TextArea>
+                                    <Label text="Curso:" textFill="WHITE">
+                                       <padding>
+                                          <Insets left="8.0" />
+                                       </padding>
+                                       <font>
+                                          <Font name="Consolas Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="cboCurso" prefHeight="35.0" prefWidth="150.0" GridPane.columnIndex="1" />
+                                 </children>
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="201.0" minWidth="10.0" prefWidth="109.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="311.0" minWidth="10.0" prefWidth="303.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="146.0" minHeight="8.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="144.0" minHeight="6.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="186.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="158.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                                    <RowConstraints fillHeight="false" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                                    <RowConstraints fillHeight="false" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <padding>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </padding>
+                              </GridPane>
+                              <HBox layoutX="-2.0" layoutY="-1.0" prefHeight="128.0" prefWidth="820.0">
+                                 <children>
+                                    <TableView fx:id="tbViewInscricao" prefHeight="200.0" prefWidth="820.0">
+                                      <columns>
+                                        <TableColumn id="clId" fx:id="clId" prefWidth="35.0" style="text-aling: center;" text="ID" />
+                                        <TableColumn fx:id="clDataInscricao" prefWidth="70.0" text="DATA INS." />
+                                          <TableColumn fx:id="clModalidade" prefWidth="90.0" text="MODALIDADE" />
+                                          <TableColumn fx:id="clNumero" prefWidth="40.0" text="Nº" />
+                                          <TableColumn fx:id="clNomeAluno" prefWidth="190.0" text="ALUNO" />
+                                          <TableColumn fx:id="clClasse" prefWidth="50.0" text="CLASSE" />
+                                          <TableColumn fx:id="clCurso" prefWidth="55.0" text="CURSO" />
+                                          <TableColumn fx:id="clTurma" prefWidth="50.0" text="TURMA" />
+                                          <TableColumn fx:id="clSala" prefWidth="40.0" text="SALA" />
+                                          <TableColumn fx:id="clTurno" prefWidth="60.0" text="TURNO" />
+                                          <TableColumn fx:id="clUsuario" prefWidth="132.0" text="USUÁRIO" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </center>
+</BorderPane>

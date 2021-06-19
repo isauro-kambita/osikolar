@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="636.0" prefWidth="820.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ao.com.osikolar.layouts.AlunoController">
+   <bottom>
+      <HBox prefHeight="75.0" prefWidth="200.0" spacing="82.0" style="-fx-background-color: #D0CFCE;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnSalvar" mnemonicParsing="false" onAction="#accionarSalvar" prefHeight="35.0" prefWidth="90.0" style="-fx-background-color: #336666;" text="Salvar" textFill="WHITE">
+               <font>
+                  <Font name="Consolas Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnActualizar" mnemonicParsing="false" onAction="#accionarActualizar" prefHeight="35.0" prefWidth="90.0" style="-fx-background-color: #336666;" text="Actualizar" textFill="WHITE">
+               <font>
+                  <Font name="Consolas Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnDeletar" mnemonicParsing="false" onAction="#accionarDeletar" prefHeight="35.0" prefWidth="90.0" style="-fx-background-color: #336666;" text="Deletar" textFill="WHITE">
+               <font>
+                  <Font name="Consolas Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnLimpar" mnemonicParsing="false" onAction="#limpar" prefHeight="35.0" prefWidth="90.0" style="-fx-background-color: #336666;" text="Limpar" textFill="WHITE">
+               <font>
+                  <Font name="Consolas Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnProcurar" mnemonicParsing="false" prefHeight="35.0" prefWidth="90.0" style="-fx-background-color: #336666;" text="Procurar" textFill="WHITE">
+               <font>
+                  <Font name="Consolas Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+         <padding>
+            <Insets left="21.0" top="18.0" />
+         </padding>
+      </HBox>
+   </bottom>
+   <center>
+      <SplitPane prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <SplitPane dividerPositions="0.44244604316546765" layoutX="-3.0" layoutY="-1.0" orientation="VERTICAL" prefHeight="558.0" prefWidth="820.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="258.0" prefWidth="818.0">
+                           <children>
+                              <TableView fx:id="tblTableView" layoutX="3.0" prefHeight="243.0" prefWidth="820.0">
+                                <columns>
+                                  <TableColumn fx:id="clcId" prefWidth="50.0" text="ID" />
+                                  <TableColumn fx:id="clcNome" minWidth="4.0" prefWidth="170.0" text="NOME COMPLETO" />
+                                    <TableColumn fx:id="clcGenero" prefWidth="60.0" text="GÊNERO" />
+                                    <TableColumn fx:id="clcAniversario" prefWidth="85.0" text="ANIVERSÁRIO" />
+                                    <TableColumn fx:id="clcEstado" prefWidth="90.0" text="ESTADO" />
+                                    <TableColumn fx:id="clcAnoLectivo" text="ANO LEC." />
+                                    <TableColumn fx:id="clcMunicipio" prefWidth="90.0" text="MUNICIPIO" />
+                                    <TableColumn fx:id="clcProvincia" prefWidth="100.0" text="PROVÍNCIA" />
+                                    <TableColumn fx:id="clcCedulaBi" prefWidth="85.0" text="CÉDULA/BI" />
+                                </columns>
+                              </TableView>
+                           </children></AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="416.0" prefWidth="818.0">
+                           <children>
+                              <HBox layoutY="1.0" prefHeight="306.0" prefWidth="405.0">
+                                 <children>
+                                    <GridPane prefHeight="305.0" prefWidth="402.0" style="-fx-background-color: #336666;">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="196.0" minWidth="10.0" prefWidth="142.0" />
+                                        <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="260.0" minWidth="10.0" prefWidth="260.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label text="ID:" textFill="WHITE">
+                                             <GridPane.margin>
+                                                <Insets />
+                                             </GridPane.margin>
+                                             <padding>
+                                                <Insets left="8.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="Consolas" size="18.5" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Nome:" textFill="WHITE" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets />
+                                             </GridPane.margin>
+                                             <padding>
+                                                <Insets left="8.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="Consolas" size="18.5" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Gênero:" textFill="WHITE" GridPane.rowIndex="2">
+                                             <GridPane.margin>
+                                                <Insets />
+                                             </GridPane.margin>
+                                             <padding>
+                                                <Insets left="8.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="Consolas" size="18.5" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Aniversário:" textFill="WHITE" GridPane.rowIndex="3">
+                                             <GridPane.margin>
+                                                <Insets />
+                                             </GridPane.margin>
+                                             <padding>
+                                                <Insets left="8.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="Consolas" size="18.5" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Pai:" textFill="WHITE" GridPane.rowIndex="4">
+                                             <GridPane.margin>
+                                                <Insets />
+                                             </GridPane.margin>
+                                             <padding>
+                                                <Insets left="8.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="Consolas" size="18.5" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Mãe:" textFill="WHITE" GridPane.rowIndex="5">
+                                             <GridPane.margin>
+                                                <Insets />
+                                             </GridPane.margin>
+                                             <padding>
+                                                <Insets left="8.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="Consolas" size="18.5" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Naturalidade:" textFill="WHITE" GridPane.rowIndex="6">
+                                             <GridPane.margin>
+                                                <Insets />
+                                             </GridPane.margin>
+                                             <padding>
+                                                <Insets left="8.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="Consolas" size="18.5" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txtId" editable="false" prefHeight="35.0" prefWidth="79.0" GridPane.columnIndex="1">
+                                             <font>
+                                                <Font name="Consolas" size="14.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField fx:id="txtNome" prefHeight="35.0" prefWidth="258.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font name="Consolas" size="14.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField fx:id="txtPai" prefHeight="35.0" prefWidth="256.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                             <font>
+                                                <Font name="Consolas" size="14.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField fx:id="txtMae" prefHeight="35.0" prefWidth="256.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                             <font>
+                                                <Font name="Consolas" size="14.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField fx:id="txtNaturalidade" prefHeight="35.0" prefWidth="256.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                             <font>
+                                                <Font name="Consolas" size="14.0" />
+                                             </font>
+                                          </TextField>
+                                          <DatePicker fx:id="dpkAniversario" prefHeight="35.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <HBox prefHeight="39.0" prefWidth="263.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                             <children>
+                                                <RadioButton fx:id="rbnFeminino" mnemonicParsing="false" text="Feminino" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Consolas" size="14.0" />
+                                                   </font>
+                                                   <toggleGroup>
+                                                      <ToggleGroup fx:id="generoAluno" />
+                                                   </toggleGroup>
+                                                </RadioButton>
+                                                <RadioButton fx:id="rbnMasculino" mnemonicParsing="false" text="Masculino" textFill="WHITE" toggleGroup="$generoAluno">
+                                                   <font>
+                                                      <Font name="Consolas" size="14.0" />
+                                                   </font>
+                                                </RadioButton>
+                                             </children>
+                                             <padding>
+                                                <Insets top="10.0" />
+                                             </padding>
+                                          </HBox>
+                                          <Label text="Município:" textFill="WHITE" GridPane.rowIndex="7">
+                                             <GridPane.margin>
+                                                <Insets />
+                                             </GridPane.margin>
+                                             <padding>
+                                                <Insets left="8.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="Consolas" size="18.5" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txtMunicipio" prefHeight="35.0" prefWidth="256.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                             <font>
+                                                <Font name="Consolas" size="14.0" />
+                                             </font>
+                                          </TextField>
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </HBox>
+                              <HBox layoutX="409.0" layoutY="1.0" prefHeight="306.0" prefWidth="409.0">
+                                 <children>
+                                    <GridPane prefHeight="321.0" prefWidth="409.0" style="-fx-background-color: #336666;">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="141.0" />
+                                          <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="315.0" minWidth="10.0" prefWidth="268.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints fillHeight="false" minHeight="10.0" prefHeight="105.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <Label text="Estado:" textFill="#f5f0f0" GridPane.rowIndex="3">
+                                             <font>
+                                                <Font name="Consolas" size="18.5" />
+                                             </font>
+                                             <padding>
+                                                <Insets left="8.0" />
+                                             </padding>
+                                          </Label>
+                                          <Label text="Ano Lectivo:" textFill="#f5f0f0" GridPane.rowIndex="4">
+                                             <font>
+                                                <Font name="Consolas" size="18.5" />
+                                             </font>
+                                             <padding>
+                                                <Insets left="8.0" />
+                                             </padding>
+                                          </Label>
+                                          <Label text="Observação:" textFill="#f5f0f0" GridPane.rowIndex="5">
+                                             <font>
+                                                <Font name="Consolas" size="18.5" />
+                                             </font>
+                                             <padding>
+                                                <Insets left="8.0" />
+                                             </padding>
+                                          </Label>
+                                          <HBox prefHeight="43.0" prefWidth="282.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                             <children>
+                                                <RadioButton fx:id="rbnActivo" mnemonicParsing="false" text="Activo" textFill="WHITE">
+                                                   <toggleGroup>
+                                                      <ToggleGroup fx:id="estadoAluno" />
+                                                   </toggleGroup></RadioButton>
+                                                <RadioButton fx:id="rbnDesistido" mnemonicParsing="false" text="Desis." textFill="WHITE" toggleGroup="$estadoAluno" />
+                                                <RadioButton fx:id="rbnFalecido" mnemonicParsing="false" text="Falec." textFill="WHITE" toggleGroup="$estadoAluno" />
+                                                <RadioButton fx:id="rbnTransferido" mnemonicParsing="false" text="Trans." textFill="WHITE" toggleGroup="$estadoAluno" />
+                                             </children>
+                                             <padding>
+                                                <Insets left="15.0" top="12.0" />
+                                             </padding>
+                                          </HBox>
+                                          <TextField fx:id="txtAnoLectivo" prefHeight="35.0" prefWidth="79.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                             <font>
+                                                <Font name="Consolas" size="14.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextArea fx:id="txaObs" prefHeight="107.0" prefWidth="267.0" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                             <font>
+                                                <Font name="Consolas" size="13.0" />
+                                             </font></TextArea>
+                                          <DatePicker fx:id="dpkDataArquivo" prefHeight="35.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Label text="Data Arquivo:" textFill="WHITE" GridPane.rowIndex="2">
+                                             <GridPane.margin>
+                                                <Insets />
+                                             </GridPane.margin>
+                                             <padding>
+                                                <Insets left="8.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="Consolas" size="18.5" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Província:" textFill="WHITE">
+                                             <GridPane.margin>
+                                                <Insets />
+                                             </GridPane.margin>
+                                             <padding>
+                                                <Insets left="8.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="Consolas" size="18.5" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Cédula/BI:" textFill="WHITE" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets />
+                                             </GridPane.margin>
+                                             <padding>
+                                                <Insets left="8.0" />
+                                             </padding>
+                                             <font>
+                                                <Font name="Consolas" size="18.5" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txtCedulaBi" prefHeight="35.0" prefWidth="266.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font name="Consolas" size="14.0" />
+                                             </font>
+                                          </TextField>
+                                          <ComboBox fx:id="cboProvincia" prefHeight="35.0" prefWidth="150.0" GridPane.columnIndex="1" />
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </center>
+</BorderPane>
